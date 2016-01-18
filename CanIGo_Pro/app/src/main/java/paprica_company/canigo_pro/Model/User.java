@@ -1,7 +1,7 @@
 package paprica_company.canigo_pro.Model;
 
 
-public class UsuarioModel
+public class User
 {
     String login;
     String senha;
