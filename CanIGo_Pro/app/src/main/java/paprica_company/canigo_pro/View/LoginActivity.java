@@ -50,6 +50,7 @@ public class LoginActivity extends AppCompatActivity
                    // startActivityForResult(intent, REQUEST_SIGNUP);
                 }
             });
+
         }
 
         public void login() {

@@ -15,25 +15,20 @@ public class coreDatabase_SQL extends SQLiteOpenHelper {
 
     private static coreDatabase_SQL sInstance;
 
-    private static final String DATABASE_NAME = "DataBase_Test.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final String DATABASE_NAME = "DataBase_Login.db";
+    private static final int DATABASE_VERSION = 1;
 
     public static synchronized coreDatabase_SQL getInstance() {
 
-        // Use the application context, which will ensure that you
-        // don't accidentally leak an Activity's context.
-        // See this article for more information: http://bit.ly/6LRzfx
-        if (sInstance == null) {
+          if (sInstance == null)
+          {
             sInstance = new coreDatabase_SQL(content);
         }
         return sInstance;
     }
-        /**
-         * Constructor should be private to prevent direct instantiation.
-         * make call to static method "getInstance()" instead.
-         */
-        private coreDatabase_SQL(Context context) {
-            super(context, "CLIENT_INFORMATION", null, DATABASE_VERSION);
+        private coreDatabase_SQL(Context context)
+        {
+            super(context, "CLIENT_LOGIN", null, DATABASE_VERSION);
             content=context;
         }
 
@@ -50,15 +45,15 @@ public class coreDatabase_SQL extends SQLiteOpenHelper {
         public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             onUpgrade(db, oldVersion, newVersion);
         }
-        public void clientInsert()
+        public void clientInsert(String login,String pwd,String email)
         {
             SQLiteDatabase db = this.getWritableDatabase();
 
             ContentValues values = new ContentValues();
 
-            values.put(Script_SQL.FeedEntry.COLUMN_LOGIN, "Titulo");
-            values.put(Script_SQL.FeedEntry.COLUMN_SENHA, "descricao");
-            values.put(Script_SQL.FeedEntry.COLUMN_EMAIL, "teste");
+            values.put(Script_SQL.FeedEntry.COLUMN_LOGIN, login);
+            values.put(Script_SQL.FeedEntry.COLUMN_PWD, pwd);
+            values.put(Script_SQL.FeedEntry.COLUMN_EMAIL, email);
 
             long newRowId;
             newRowId = db.insert(
@@ -75,6 +70,5 @@ public class coreDatabase_SQL extends SQLiteOpenHelper {
             return cursor;
         }
 
-    }
-
 }
+

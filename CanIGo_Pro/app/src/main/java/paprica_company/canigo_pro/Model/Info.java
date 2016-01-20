@@ -11,10 +11,9 @@ public class Info {
     String birthDate;
     Boolean sex;
     User user;
+    Style style;
 
-    public User getUser() {
-        return user;
-    }
+    public User getUser() {return user; }
 
     public int getPhoto() {
         return photo;

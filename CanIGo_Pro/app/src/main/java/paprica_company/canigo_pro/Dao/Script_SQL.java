@@ -9,7 +9,7 @@ public final class Script_SQL {
     public static abstract class FeedEntry implements BaseColumns {
         public static final String TABLE_NAME = "CLIENT_LOGIN";
         public static final String COLUMN_LOGIN = "LOGIN";
-        public static final String COLUMN_SENHA = "SENHA";
+        public static final String COLUMN_PWD = "PWD";
         public static final String COLUMN_EMAIL = "EMAIL";
     }
 
@@ -22,7 +22,7 @@ public final class Script_SQL {
             "CREATE TABLE " + FeedEntry.TABLE_NAME + "(" +
                     FeedEntry._ID + " INTEGER PRIMARY KEY," +
                     FeedEntry.COLUMN_LOGIN + TEXT_TYPE + COMMA_SEP +
-                    FeedEntry.COLUMN_SENHA + TEXT_TYPE + COMMA_SEP +
+                    FeedEntry.COLUMN_PWD + TEXT_TYPE + COMMA_SEP +
                     FeedEntry.COLUMN_EMAIL + TEXT_TYPE +
                     " )";
 

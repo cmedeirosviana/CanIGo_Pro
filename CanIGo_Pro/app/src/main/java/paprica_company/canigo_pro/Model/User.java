@@ -4,7 +4,7 @@ package paprica_company.canigo_pro.Model;
 public class User
 {
     String login;
-    String senha;
+    String psw;
     String email;
 
     public String getLogin() {
@@ -12,12 +12,13 @@ public class User
     }
 
     public String getSenha() {
-        return senha;
+        return psw;
     }
 
     public String getEmail() {
         return email;
     }
+
 
 
 }
