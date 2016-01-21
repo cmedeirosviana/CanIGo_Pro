@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import paprica_company.canigo_pro.Dao.DBAdapter;
+import paprica_company.canigo_pro.Dao.Script_User;
 
 
 public class User
@@ -80,10 +81,10 @@ public class User
      */
     public long createCar(String name, String model, String year){
         ContentValues initialValues = new ContentValues();
-        initialValues.put(NAME, name);
-        initialValues.put(MODEL, model);
-        initialValues.put(YEAR, year);
-        return this.mDb.insert(DATABASE_TABLE, null, initialValues);
+        initialValues.put(Script_User.FeedEntry.COLUMN_LOGIN, name);
+        initialValues.put(Script_User.FeedEntry.COLUMN_EMAIL, model);
+        initialValues.put(Script_User.FeedEntry.COLUMN_PWD, year);
+        return this.mDb.insert(Script_User.FeedEntry.TABLE_NAME, null, initialValues);
     }
 
     /**
@@ -94,7 +95,7 @@ public class User
      */
     public boolean deleteCar(long rowId) {
 
-        return this.mDb.delete(DATABASE_TABLE, ROW_ID + "=" + rowId, null) > 0; //$NON-NLS-1$
+        return this.mDb.delete(Script_User.FeedEntry.TABLE_NAME, Script_User.FeedEntry._ID + "=" + rowId, null) > 0; //$NON-NLS-1$
     }
 
     /**
@@ -104,8 +105,8 @@ public class User
      */
     public Cursor getAllCars() {
 
-        return this.mDb.query(DATABASE_TABLE, new String[] { ROW_ID,
-                NAME, MODEL, YEAR }, null, null, null, null, null);
+        return this.mDb.query(Script_User.FeedEntry.TABLE_NAME, new String[] { Script_User.FeedEntry._ID,
+                Script_User.FeedEntry.COLUMN_LOGIN, Script_User.FeedEntry.COLUMN_EMAIL, Script_User.FeedEntry.COLUMN_PWD }, null, null, null, null, null);
     }
 
     /**
@@ -118,8 +119,8 @@ public class User
 
         Cursor mCursor =
 
-                this.mDb.query(true, DATABASE_TABLE, new String[] { ROW_ID, NAME,
-                        MODEL, YEAR}, ROW_ID + "=" + rowId, null, null, null, null, null);
+                this.mDb.query(true, Script_User.FeedEntry.TABLE_NAME, new String[] { Script_User.FeedEntry._ID,
+                        Script_User.FeedEntry.COLUMN_EMAIL, Script_User.FeedEntry.COLUMN_LOGIN, Script_User.FeedEntry.COLUMN_PWD}, Script_User.FeedEntry._ID + "=" + rowId, null, null, null, null, null);
         if (mCursor != null) {
             mCursor.moveToFirst();
         }
@@ -138,11 +139,11 @@ public class User
     public boolean updateCar(long rowId, String name, String model,
                              String year){
         ContentValues args = new ContentValues();
-        args.put(NAME, name);
-        args.put(MODEL, model);
-        args.put(YEAR, year);
+        args.put(Script_User.FeedEntry.COLUMN_LOGIN, name);
+        args.put(Script_User.FeedEntry.COLUMN_EMAIL, model);
+        args.put(Script_User.FeedEntry.COLUMN_PWD, year);
 
-        return this.mDb.update(DATABASE_TABLE, args, ROW_ID + "=" + rowId, null) >0;
+        return this.mDb.update(Script_User.FeedEntry.TABLE_NAME, args, Script_User.FeedEntry._ID + "=" + rowId, null) >0;
     }
     //------------------------------------ Class Methods-------------------------------------------
 }
