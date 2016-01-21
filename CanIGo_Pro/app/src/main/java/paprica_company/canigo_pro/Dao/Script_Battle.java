@@ -2,17 +2,18 @@ package paprica_company.canigo_pro.Dao;
 import android.provider.BaseColumns;
 
 
-public final class Script_CommentVote {
+public final class Script_Battle {
 
-    public Script_CommentVote() {}
+    public Script_Battle() {}
 
     public static abstract class FeedEntry implements BaseColumns
     {
 
         public static final String TABLE_NAME = "VOTE";
-        public static final String COLUMN_IMAGE = "IMAGE";
-        public static final String COLUMN_NUMCOMMENT = "NUMCOMMENT";
-        public static final String COLUMN_VOTE = "VOTE";
+        public static final String COLUMN_IMAGE1 = "IMAGE1";
+        public static final String COLUMN_IMAGE2 = "IMAGE2";
+        public static final String COLUMN_VOTE1 = "VOTE1";
+        public static final String COLUMN_VOTE2 = "VOTE2";
 
     }
 
@@ -27,9 +28,10 @@ public final class Script_CommentVote {
     public static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + FeedEntry.TABLE_NAME + "(" +
                     FeedEntry._ID + " INTEGER PRIMARY KEY," +
-                    FeedEntry.COLUMN_IMAGE + BLOB + COMMA_SEP +
-                    FeedEntry.COLUMN_NUMCOMMENT + INTEGER_TYPE + COMMA_SEP +
-                    FeedEntry.COLUMN_VOTE + TEXT_TYPE +
+                    FeedEntry.COLUMN_IMAGE1 + BLOB + COMMA_SEP +
+                    FeedEntry.COLUMN_IMAGE2 + BLOB + COMMA_SEP +
+                    FeedEntry.COLUMN_VOTE1 + INTEGER_TYPE + COMMA_SEP +
+                    FeedEntry.COLUMN_VOTE2 + INTEGER_TYPE +
                     " )";
 
     public static final String SQL_DELETE_ENTRIES =
