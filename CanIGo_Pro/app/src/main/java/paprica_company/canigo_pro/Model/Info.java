@@ -1,12 +1,10 @@
 package paprica_company.canigo_pro.Model;
 
+import android.graphics.drawable.Drawable;
 import android.util.Property;
 
-/**
- * Created by Luana on 18/01/2016.
- */
 public class Info {
-    int photo;
+    Drawable photo;
     String name;
     String birthDate;
     Boolean sex;
@@ -15,7 +13,7 @@ public class Info {
 
     public User getUser() {return user; }
 
-    public int getPhoto() {
+    public Drawable getPhoto() {
         return photo;
     }
 
