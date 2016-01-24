@@ -23,6 +23,8 @@ public final class Script_Style {
         public static final String COLUMN_CASUAL = "CASUAL";
         public static final String COLUMN_ROMANTIC = "ROMANTIC";
         public static final String COLUMN_BEACHWEAR = "BEACHWEAR";
+        public static final String COLUMN_GOTHIC = "GOTHIC";
+        public static final String COLUMN_GEEK = "GEEK";
 
         private static final String TEXT_TYPE = " TEXT";
         private static final String INTEGER_TYPE = " INTEGER";
@@ -46,6 +48,8 @@ public final class Script_Style {
                         FeedEntry.COLUMN_ACTIVEWEAR + INTEGER_TYPE + COMMA_SEP +
                         FeedEntry.COLUMN_CASUAL + INTEGER_TYPE + COMMA_SEP +
                         FeedEntry.COLUMN_ROMANTIC + INTEGER_TYPE + COMMA_SEP +
+                        FeedEntry.COLUMN_GOTHIC + INTEGER_TYPE + COMMA_SEP +
+                        FeedEntry.COLUMN_GEEK + INTEGER_TYPE + COMMA_SEP +
                         FeedEntry.COLUMN_BEACHWEAR + INTEGER_TYPE +
                         " )";
 
