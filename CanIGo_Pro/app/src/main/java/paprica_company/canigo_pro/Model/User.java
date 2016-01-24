@@ -63,23 +63,11 @@ public class User
         return this;
     }
 
-    /**
-     * close return type: void
-     */
     public void close() {
         this.mDbHelper.close();
     }
 
-    /**
-     * Create a new car. If the car is successfully created return the new
-     * rowId for that car, otherwise return a -1 to indicate failure.
-     *
-     * @param name
-     * @param model
-     * @param year
-     * @return rowId or -1 if failed
-     */
-    public long createCar(String name, String model, String year){
+    public long createUser(String name, String model, String year){
         ContentValues initialValues = new ContentValues();
         initialValues.put(Script_User.FeedEntry.COLUMN_LOGIN, name);
         initialValues.put(Script_User.FeedEntry.COLUMN_EMAIL, model);
@@ -87,35 +75,21 @@ public class User
         return this.mDb.insert(Script_User.FeedEntry.TABLE_NAME, null, initialValues);
     }
 
-    /**
-     * Delete the car with the given rowId
-     *
-     * @param rowId
-     * @return true if deleted, false otherwise
-     */
-    public boolean deleteCar(long rowId) {
+
+    public boolean deleteUser(long rowId) {
 
         return this.mDb.delete(Script_User.FeedEntry.TABLE_NAME, Script_User.FeedEntry._ID + "=" + rowId, null) > 0; //$NON-NLS-1$
     }
 
-    /**
-     * Return a Cursor over the list of all cars in the database
-     *
-     * @return Cursor over all cars
-     */
-    public Cursor getAllCars() {
+
+    public Cursor getAllUsers() {
 
         return this.mDb.query(Script_User.FeedEntry.TABLE_NAME, new String[] { Script_User.FeedEntry._ID,
                 Script_User.FeedEntry.COLUMN_LOGIN, Script_User.FeedEntry.COLUMN_EMAIL, Script_User.FeedEntry.COLUMN_PWD }, null, null, null, null, null);
     }
 
-    /**
-     * Return a Cursor positioned at the car that matches the given rowId
-     * @param rowId
-     * @return Cursor positioned to matching car, if found
-     * @throws SQLException if car could not be found/retrieved
-     */
-    public Cursor getCar(long rowId) throws SQLException {
+
+    public Cursor getUser(long rowId) throws SQLException {
 
         Cursor mCursor =
 
@@ -127,16 +101,7 @@ public class User
         return mCursor;
     }
 
-    /**
-     * Update the car.
-     *
-     * @param rowId
-     * @param name
-     * @param model
-     * @param year
-     * @return true if the note was successfully updated, false otherwise
-     */
-    public boolean updateCar(long rowId, String name, String model,
+    public boolean updateUser(long rowId, String name, String model,
                              String year){
         ContentValues args = new ContentValues();
         args.put(Script_User.FeedEntry.COLUMN_LOGIN, name);
