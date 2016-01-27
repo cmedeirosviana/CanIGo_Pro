@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import paprica_company.canigo_pro.Dao.DBAdapter;
 import paprica_company.canigo_pro.R;
 
 public class LoginActivity extends AppCompatActivity
@@ -28,11 +29,12 @@ public class LoginActivity extends AppCompatActivity
         @InjectView(R.id.link_signup) TextView _signupLink;
 
         @Override
-        public void onCreate(Bundle savedInstanceState) {
+        public void onCreate(Bundle savedInstanceState)
+        {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
             ButterKnife.inject(this);
-
+            DBAdapter.getinstance();
             _loginButton.setOnClickListener(new View.OnClickListener() {
 
                 @Override

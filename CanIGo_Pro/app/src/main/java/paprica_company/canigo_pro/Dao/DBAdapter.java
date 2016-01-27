@@ -5,9 +5,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by Luana on 21/01/2016.
- */
+
 public class DBAdapter {
 
     public static final String DATABASE_NAME = "DataBase_CanIGo"; //$NON-NLS-1$
@@ -15,18 +13,24 @@ public class DBAdapter {
     public static final int DATABASE_VERSION = 1;
 
 
-    private final Context context;
+    private static Context context;
+    private static DBAdapter sInstance;
     private DatabaseHelper DBHelper;
     private SQLiteDatabase db;
 
-    /**
-     * Constructor
-     * @param ctx
-     */
     public DBAdapter(Context ctx)
     {
         this.context = ctx;
         this.DBHelper = new DatabaseHelper(this.context);
+    }
+
+    public static synchronized DBAdapter getinstance()
+    {
+        if (sInstance == null)
+        {
+            sInstance = new DBAdapter(context);
+        }
+        return sInstance;
     }
 
     private static class DatabaseHelper extends SQLiteOpenHelper
@@ -39,9 +43,14 @@ public class DBAdapter {
         @Override
         public void onCreate(SQLiteDatabase db)
         {
-//            db.execSQL(CREATE_TABLE_CARS);
-//            db.execSQL(CREATE_TABLE_BOATS);
-//            db.execSQL(CREATE_TABLE_CYCLES);
+            db.execSQL(Script_User.FeedEntry.TABLE_NAME);
+            db.execSQL(Script_Style.FeedEntry.TABLE_NAME);
+            db.execSQL(Script_Pin.FeedEntry.TABLE_NAME);
+            db.execSQL(Script_Photo.FeedEntry.TABLE_NAME);
+            db.execSQL(Script_Panel.FeedEntry.TABLE_NAME);
+            db.execSQL(Script_Info.FeedEntry.TABLE_NAME);
+            db.execSQL(Script_CommentVote.FeedEntry.TABLE_NAME);
+            db.execSQL(Script_Battle.FeedEntry.TABLE_NAME);
         }
 
         @Override
@@ -52,22 +61,12 @@ public class DBAdapter {
         }
     }
 
-    /**
-     * open the db
-     * @return this
-     * @throws SQLException
-     * return type: DBAdapter
-     */
     public DBAdapter open() throws SQLException
     {
         this.db = this.DBHelper.getWritableDatabase();
         return this;
     }
 
-    /**
-     * close the db
-     * return type: void
-     */
     public void close()
     {
         this.DBHelper.close();
