@@ -1,7 +1,9 @@
 package paprica_company.canigo_pro.View;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.database.SQLException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +22,7 @@ public class LoginActivity extends AppCompatActivity
 {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
+    private DBAdapter daabase_sql;
     private final int senhaMinCaracteres = 4;
     private final int senhaMaxCaracteres = 10;
 
@@ -52,7 +55,17 @@ public class LoginActivity extends AppCompatActivity
                    // startActivityForResult(intent, REQUEST_SIGNUP);
                 }
             });
-
+        try
+        {
+            daabase_sql=DBAdapter.getinstance();
+        }
+        catch (SQLException exception)
+        {
+            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+            dlg.setMessage("Connection not Performed!"+exception.getMessage());
+            dlg.setNegativeButton("OK", null);
+            dlg.show();
+        }
         }
 
         public void login() {
