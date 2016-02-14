@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CanIGo_Pro</string>
+    <string name="conteudo_improprio">Conteúdo Impróprio</string>
+    <string name="spam">Spam</string>
 </resources>

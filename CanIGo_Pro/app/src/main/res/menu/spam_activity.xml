@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/conteudo_improprio"
+        android:title="@string/conteudo_improprio" />
+    <item android:id="@+id/spam"
+        android:title="@string/spam" />
+</menu>
