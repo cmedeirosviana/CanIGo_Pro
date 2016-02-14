@@ -12,7 +12,6 @@ public class DBAdapter {
 
     public static final int DATABASE_VERSION = 1;
 
-
     private static Context context;
     private static DBAdapter sInstance;
     private DatabaseHelper DBHelper;

@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity
 {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
-    private DBAdapter daabase_sql;
+    private DBAdapter database_sql;
     private final int senhaMinCaracteres = 4;
     private final int senhaMaxCaracteres = 10;
 
@@ -57,7 +57,8 @@ public class LoginActivity extends AppCompatActivity
             });
         try
         {
-            daabase_sql=DBAdapter.getinstance();
+            database_sql=DBAdapter.getinstance();
+            
         }
         catch (SQLException exception)
         {
