@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 import paprica_company.canigo_pro.R;
 
-public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener
+public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener,MenuItem.OnMenuItemClickListener
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -76,8 +76,15 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 //TODO : falta criar a conexão com os outros modulos
             }
         });
-    }
 
+        //-------------------------------------- ActionBar Implementation --------------------------------------------
+
+        final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setCustomView(R.layout.actionbar_main);
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowCustomEnabled(true);
+
+    }
     //-------------------------------------- Menu Implementation --------------------------------------------
 
     public void popupSpam(View v)
