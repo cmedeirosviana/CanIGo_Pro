@@ -16,6 +16,7 @@ import android.widget.Toast;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import paprica_company.canigo_pro.Dao.DBAdapter;
+import paprica_company.canigo_pro.Model.User;
 import paprica_company.canigo_pro.R;
 
 public class LoginActivity extends AppCompatActivity
@@ -37,7 +38,8 @@ public class LoginActivity extends AppCompatActivity
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
             ButterKnife.inject(this);
-            DBAdapter.getinstance();
+            DBAdapter.getinstance(this.getApplicationContext());
+            User puser = new User("luana", "lu@yahoo.com.br", "1989");
             _loginButton.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -57,7 +59,7 @@ public class LoginActivity extends AppCompatActivity
             });
         try
         {
-            database_sql=DBAdapter.getinstance();
+            database_sql=DBAdapter.getinstance(this.getApplicationContext());
             
         }
         catch (SQLException exception)

@@ -53,8 +53,12 @@ public class User
         }
     }
     //-------------------------------------- Builders----------------------------------------------
-    public User(Context ctx) {
-        this.mCtx = ctx;
+    public User(String name, String email, String year) {
+
+        this.mCtx = DBAdapter.getContext();
+        open();
+        createUser(name, email, year);
+        close();
     }
     //---------------------------------- Table DB Methods------------------------------------------
     public User open() throws SQLException {
@@ -67,10 +71,10 @@ public class User
         this.mDbHelper.close();
     }
 
-    public long createUser(String name, String model, String year){
+    private long createUser(String name, String email, String year){
         ContentValues initialValues = new ContentValues();
         initialValues.put(Script_User.FeedEntry.COLUMN_LOGIN, name);
-        initialValues.put(Script_User.FeedEntry.COLUMN_EMAIL, model);
+        initialValues.put(Script_User.FeedEntry.COLUMN_EMAIL, email);
         initialValues.put(Script_User.FeedEntry.COLUMN_PWD, year);
         return this.mDb.insert(Script_User.FeedEntry.TABLE_NAME, null, initialValues);
     }

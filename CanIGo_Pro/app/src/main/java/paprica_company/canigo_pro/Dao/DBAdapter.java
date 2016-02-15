@@ -13,21 +13,28 @@ public class DBAdapter {
     public static final int DATABASE_VERSION = 1;
 
     private static Context context;
+
+    public static Context getContext() {
+        return context;
+    }
+
     private static DBAdapter sInstance;
     private DatabaseHelper DBHelper;
     private SQLiteDatabase db;
 
-    public DBAdapter(Context ctx)
+
+
+    public DBAdapter(Context pContext)
     {
-        this.context = ctx;
+        this.context = pContext;
         this.DBHelper = new DatabaseHelper(this.context);
     }
 
-    public static synchronized DBAdapter getinstance()
+    public static synchronized DBAdapter getinstance(Context pContext)
     {
         if (sInstance == null)
         {
-            sInstance = new DBAdapter(context);
+            sInstance = new DBAdapter(pContext);
         }
         return sInstance;
     }
