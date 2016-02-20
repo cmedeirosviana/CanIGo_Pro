@@ -1,5 +1,6 @@
 package paprica_company.canigo_pro.View;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             public void onClick(View v)
             {
 
+                Intent intent =new Intent(MainActivity.this,Pin_Activity.class);
+                startActivity(intent);
                 //TODO : falta criar a conexão com os outros modulos
             }
         });
