@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+     android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/imageView_painel"
+        android:src="@drawable/camera"
+        android:paddingLeft="50dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    ImageView>
+
+    <TextView
+        android:id="@+id/painel_default"
+        android:text="TextView"
+        android:paddingLeft="100dp"
+        android:layout_toRightOf="@id/imageView_painel"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"/>
+    TextView>
+
+</LinearLayout>

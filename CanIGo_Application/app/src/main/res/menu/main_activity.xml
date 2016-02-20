@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/help"
+        android:icon="@drawable/people"
+        android:title="@string/Termos_de_Privacidade" />
+    <item android:id="@+id/privacidade"
+        android:icon="@drawable/people"
+        android:title="@string/Help" />
+</menu>

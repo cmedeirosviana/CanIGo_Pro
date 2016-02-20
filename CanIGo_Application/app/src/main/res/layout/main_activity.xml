@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:id="@+id/global_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/picture1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/imageView"
+            android:weightSum="1"
+            android:id="@+id/linearLayout">
+
+
+            <ImageButton
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                android:layout_width="114dp"
+                android:layout_height="114dp"
+                android:padding="10dp"
+                android:id="@+id/imageButton_like"
+                android:src="@drawable/like"
+                android:layout_marginRight="@dimen/activity_horizontal_margin" />
+
+
+            <ImageButton
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                android:layout_width="107dp"
+                android:layout_height="107dp"
+                android:padding="10dp"
+                android:id="@+id/imageButton_dislike"
+                android:src="@drawable/dislike"
+                android:layout_below="@+id/imageView"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <ImageButton
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                android:layout_width="wrap_content"
+                android:layout_height="115dp"
+                android:id="@+id/imageButtonPin"
+                android:src="@drawable/ic_launcher"
+                android:layout_weight="0.48" />
+
+        </LinearLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/spam"
+        android:onClick="showPopup_spam"
+        android:id="@+id/imageButton"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/image_animation"
+        android:layout_above="@+id/imageButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp" />
+
+
+</RelativeLayout>
+
+

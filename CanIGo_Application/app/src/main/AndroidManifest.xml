@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="swape.canigo_application" >
+
+    <!-- permissões para Auto completa o e-mail e login -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- Acesso a internet para cadastrar e-mails -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".Login_screen.GeneralApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Login_screen.Login_Screen.LoginActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Login_screen.Login_Screen.SignActivity" >
+        </activity>
+        <activity android:name=".Login_screen.Cadastro_Screen.CadastroActivity" >
+        </activity>
+        <activity android:name=".Login_screen.Main_Screen.MainActivity" >
+        </activity>
+        <activity android:name=".Login_screen.Perfil_Screen.PerfilActivity" >
+        </activity>
+        <activity android:name=".Login_screen.Perfil_Individual_Screen.PerfilIndividualActivity" >
+        </activity>
+        <activity android:name=".Login_screen.Main_Screen.PainelActivity" >
+        </activity>
+        <activity android:name=".Login_screen.Resultados_Screen.ResultsActvity" >
+        </activity>
+        <activity android:name=".Login_screen.Image_management.Image_management" >
+        </activity>
+    </application>
+
+</manifest>

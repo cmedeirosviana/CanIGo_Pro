@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="swape.canigo_application.Login_screen.Cadastro_Screen.CadastroActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:text="Qual o genero de interesse?"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+<RadioGroup
+    android:id="@+id/radioSexo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RadioButton
+        android:name="sexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MASCULINO"
+        android:id="@+id/radioButton"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="52dp"
+        android:checked="false" />
+
+    <RadioButton
+        android:name="sexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FEMININO"
+        android:id="@+id/radioButton2"
+        android:layout_below="@+id/radioButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
+
+    <RadioButton
+        android:name="sexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AMBOS"
+        android:id="@+id/radioButton3"
+        android:checked="false"
+        android:layout_below="@+id/radioButton2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Style_checkbox"
+        android:text="Quais desses estilos você tem interesse?"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CASUAL"
+        android:id="@+id/CheckBox1"
+        android:layout_below="@+id/Style_checkbox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PIRIGUETE"
+        android:id="@+id/CheckBox2"
+        android:layout_below="@+id/CheckBox1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SEXY"
+        android:id="@+id/CheckBox3"
+        android:layout_below="@+id/CheckBox2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ACTIVEWEAR"
+        android:id="@+id/CheckBox4"
+        android:layout_below="@+id/CheckBox3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BOHÔ"
+        android:id="@+id/CheckBox5"
+        android:checked="false"
+        android:layout_above="@+id/CheckBox4"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLÁSSICO"
+        android:id="@+id/CheckBox6"
+        android:layout_alignTop="@+id/CheckBox2"
+        android:layout_alignLeft="@+id/CheckBox5"
+        android:layout_alignStart="@+id/CheckBox5"
+        android:checked="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GLAM"
+        android:id="@+id/CheckBox7"
+        android:checked="false"
+        android:layout_below="@+id/Style_checkbox"
+        android:layout_alignLeft="@+id/CheckBox6"
+        android:layout_alignStart="@+id/CheckBox6" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LADYLIKE"
+        android:id="@+id/CheckBox8"
+        android:layout_alignTop="@+id/CheckBox4"
+        android:layout_alignLeft="@+id/CheckBox7"
+        android:layout_alignStart="@+id/CheckBox7"
+        android:checked="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EMMO"
+        android:id="@+id/CheckBox9"
+        android:checked="false"
+        android:layout_below="@+id/CheckBox4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seguir"
+        android:id="@+id/ContinuarButton"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/CheckBox5"
+        android:layout_toRightOf="@+id/CheckBox5" />
+
+</RelativeLayout>
