@@ -56,8 +56,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             public void onClick(View v)
             {
 
-                Intent intent =new Intent(MainActivity.this,Pin_Activity.class);
-                startActivity(intent);
                 //TODO : falta criar a conexão com os outros modulos
             }
         });
