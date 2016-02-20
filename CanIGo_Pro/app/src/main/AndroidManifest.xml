@@ -8,16 +8,26 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+<<<<<<< HEAD
         <activity android:name=".View.MainActivity">
+=======
+        <activity android:name=".View.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+>>>>>>> origin/Login_branch
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".View.LoginActivity" >
         </activity>
         <activity android:name=".View.Pin_Activity" android:theme="@android:style/Theme.Dialog">
     </activity>
+=======
+        <activity android:name=".View.MainActivity" >
+        </activity>
+>>>>>>> origin/Login_branch
     </application>
 
 </manifest>

@@ -146,7 +146,7 @@ public class LoginActivity extends AppCompatActivity
             }
 
             if (password.isEmpty() || password.length() < senhaMinCaracteres || password.length() > senhaMaxCaracteres) {
-                _passwordText.setError("Entre " + senhaMinCaracteres + "e" + senhaMaxCaracteres + " caracteres");
+                _passwordText.setError("Entre " + senhaMinCaracteres + " e " + senhaMaxCaracteres + " caracteres");
                 valid = false;
             } else {
                 _passwordText.setError(null);
