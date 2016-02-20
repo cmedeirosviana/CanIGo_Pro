@@ -1,14 +1,12 @@
 package paprica_company.canigo_pro.View;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
+import java.util.ArrayList;
+import java.util.List;
 
 import paprica_company.canigo_pro.R;
 
@@ -19,15 +17,21 @@ public class Pin_Activity extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pin);
+        setContentView(R.layout.layout_list_pin);
 
-        final ListView listView = (ListView)findViewById(R.id.list_painel);
+        List<String> list_test = new ArrayList<String>();
 
-        PainelAdapter adapter = new PainelAdapter(PainelActivity.this, R.id.imageView_painel,painelData.painelList);
-        listView.setAdapter(adapter);
+        list_test.add("B");
+        list_test.add("C");
+
+        ListView pinList = (ListView)findViewById(R.id.pinList);
+
+        Pin_Adapter pin_adapter = new Pin_Adapter(Pin_Activity.this, R.id.panelImg,list_test);
+
+        pinList.setAdapter(pin_adapter);
 
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        pinList.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,

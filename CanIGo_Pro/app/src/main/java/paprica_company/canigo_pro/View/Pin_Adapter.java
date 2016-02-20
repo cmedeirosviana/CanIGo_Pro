@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,36 +12,34 @@ import java.util.List;
 
 import paprica_company.canigo_pro.R;
 
-public class Pin_Adapter extends ArrayAdapter<PanelModel>
+public class Pin_Adapter extends ArrayAdapter<String>
 {
 
     ViewHolder viewHolder;
 
-    public Pin_Adapter(Context context, int Layout_id, List<PanelModel> items)
+    public Pin_Adapter(Context context, int Layout_id, List<String> items)
     {
         super(context,Layout_id,items);
     }
 
     private static class ViewHolder
     {
-        TextView textView;
-        ImageView imageView;
+        TextView panelTxt;
+        ImageView panelImg;
 
         ViewHolder(View rootView)
         {
-            textView = (TextView) rootView.findViewById(R.id.painel_default);
-            imageView = (ImageView) rootView.findViewById(R.id.imageView_painel);
+            panelTxt = (TextView) rootView.findViewById(R.id.panelTxt);
+            panelImg = (ImageView) rootView.findViewById(R.id.panelImg);
         }
     }
         @Override
         public View getView(int position, View convertView, ViewGroup parent)
         {
-            PanelModel item = getItem(position);
 
             if (convertView == null)
             {
-                convertView = LayoutInflater.from(this.getContext())
-                        .inflate(R.layout.painel_text_layout, parent, false);
+                convertView = LayoutInflater.from(this.getContext()).inflate(R.layout.activity_pin, parent, false);
 
                 viewHolder = new ViewHolder(convertView);
 
@@ -50,13 +49,6 @@ public class Pin_Adapter extends ArrayAdapter<PanelModel>
 
             {
                 viewHolder = (ViewHolder) convertView.getTag();
-            }
-
-
-            if (item!= null)
-            {
-                viewHolder.textView.setText(item.getMpanel());
-                viewHolder.imageView.setImageResource(item.getMphotoId());
             }
 
             return convertView;
