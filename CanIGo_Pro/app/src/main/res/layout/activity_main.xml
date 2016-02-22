@@ -1,80 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/image_vertical_margin"
+    android:paddingRight="@dimen/image_horizontal_margin"
+    android:paddingTop="@dimen/image_vertical_margin"
+    android:paddingBottom="@dimen/image_horizontal_margin"
     tools:context="paprica_company.canigo_pro.View.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainImg"
+        android:src="@drawable/picturedefault"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/mainImg"
-        android:src="@drawable/picturedeafult"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/dislikeBtn"
+        android:src="@drawable/dislike"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="@dimen/main_image_buttons"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="82dp" />
 
-    <ImageButton
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/likeBtn"
-        android:src="@drawable/star"
-        android:layout_below="@+id/mainImg"
-        android:layout_alignLeft="@+id/mainImg"
-        android:layout_alignStart="@+id/mainImg" />
+        android:src="@drawable/like"
+        android:paddingRight="@dimen/main_image_buttons"
+        android:layout_alignTop="@+id/dislikeBtn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-    <ImageButton
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/perfilBtn"
+        android:src="@drawable/perfil"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spamBtn"
+        android:src="@drawable/spam"
+        android:onClick="popupSpam"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/versusBtn"
+        android:src="@drawable/versus"
+        android:layout_alignTop="@+id/perfilBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/PinBtn"
         android:src="@drawable/pin"
-        android:layout_below="@+id/mainImg"
-        android:layout_centerHorizontal="true" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/dislikeBtn"
-        android:src="@drawable/tomato"
-        android:layout_below="@+id/mainImg"
-        android:layout_alignRight="@+id/PinBtn"
-        android:layout_alignEnd="@+id/mainImg" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/VersusBtn"
-        android:src="@drawable/versus"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/likeBtn"
-        android:layout_toEndOf="@+id/likeBtn" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/BattleBtn"
-        android:src="@drawable/approval"
-        android:layout_alignTop="@+id/VersusBtn"
-        android:layout_toRightOf="@+id/PinBtn"
-        android:layout_toEndOf="@+id/PinBtn" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_alignTop="@+id/mainImg"
-        android:layout_above="@+id/likeBtn">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spamBtn"
-            android:src="@drawable/spam"
-            android:onClick="popupSpam"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-    </RelativeLayout>
-
+        android:layout_below="@+id/perfilBtn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="93dp" />
 </RelativeLayout>

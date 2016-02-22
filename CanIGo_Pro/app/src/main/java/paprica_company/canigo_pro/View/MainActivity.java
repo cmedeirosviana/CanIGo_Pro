@@ -23,12 +23,11 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         //-------------------------------------- Layout creation --------------------------------------------
 
         ImageView mainImg = (ImageView)findViewById(R.id.mainImg);
-        ImageButton likeBtn= (ImageButton)findViewById(R.id.likeBtn);
-        ImageButton dislikeBtn = (ImageButton) findViewById(R.id.dislikeBtn);
-        ImageButton PinBtn = (ImageButton) findViewById(R.id.PinBtn);
-        ImageButton BattleBtn = (ImageButton) findViewById(R.id.BattleBtn);
-        ImageButton VersusBtn = (ImageButton) findViewById(R.id.VersusBtn);
-
+        ImageView likeBtn= (ImageView)findViewById(R.id.likeBtn);
+        ImageView dislikeBtn = (ImageView) findViewById(R.id.dislikeBtn);
+        ImageView pinBtn = (ImageView) findViewById(R.id.PinBtn);
+        ImageView versusBtn = (ImageView) findViewById(R.id.versusBtn);
+        ImageView perfilBtn = (ImageView) findViewById(R.id.perfilBtn);
         //-------------------------------------- Buttons Implementation --------------------------------------------
 
         likeBtn.setOnClickListener(new View.OnClickListener()
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             }
         });
 
-        PinBtn.setOnClickListener(new View.OnClickListener()
+        pinBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -62,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             }
         });
 
-        BattleBtn.setOnClickListener(new View.OnClickListener()
+        versusBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -71,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             }
         });
 
-        VersusBtn.setOnClickListener(new View.OnClickListener()
+        perfilBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -82,10 +81,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         //-------------------------------------- ActionBar Implementation --------------------------------------------
 
-        final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(R.layout.actionbar_main);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayShowCustomEnabled(true);
+
+
 
     }
     //-------------------------------------- Menu Implementation --------------------------------------------
