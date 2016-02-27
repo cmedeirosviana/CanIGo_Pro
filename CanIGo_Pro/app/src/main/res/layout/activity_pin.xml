@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/teste">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/panelImg"
         android:src="@drawable/canigo"
-
         android:layout_centerInParent="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -22,4 +22,5 @@
         android:layout_centerInParent="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
 </RelativeLayout>
