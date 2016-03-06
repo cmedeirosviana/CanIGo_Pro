@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import paprica_company.canigo_pro.Controller.CUser;
 import paprica_company.canigo_pro.Dao.DBAdapter;
 import paprica_company.canigo_pro.Model.User;
 import paprica_company.canigo_pro.R;
@@ -39,7 +40,7 @@ public class LoginActivity extends AppCompatActivity
             setContentView(R.layout.activity_login);
             ButterKnife.inject(this);
             DBAdapter.getinstance(this.getApplicationContext());
-            User puser = new User("luana", "lu@yahoo.com.br", "1989");
+            User puser = new User("luana", "lu", "1989");
             _loginButton.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -88,6 +89,7 @@ public class LoginActivity extends AppCompatActivity
 
             String email = _emailText.getText().toString();
             String password = _passwordText.getText().toString();
+            CUser.checkUser(email,password);
 
             // TODO: Banco de dados.
 
@@ -135,22 +137,22 @@ public class LoginActivity extends AppCompatActivity
         public boolean validate() {
             boolean valid = true;
 
-            String email = _emailText.getText().toString();
-            String password = _passwordText.getText().toString();
-
-            if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                _emailText.setError("Insira um e-mail válido");
-                valid = false;
-            } else {
-                _emailText.setError(null);
-            }
-
-            if (password.isEmpty() || password.length() < senhaMinCaracteres || password.length() > senhaMaxCaracteres) {
-                _passwordText.setError("Entre " + senhaMinCaracteres + " e " + senhaMaxCaracteres + " caracteres");
-                valid = false;
-            } else {
-                _passwordText.setError(null);
-            }
+//            String email = _emailText.getText().toString();
+//            String password = _passwordText.getText().toString();
+//
+//            if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+//                _emailText.setError("Insira um e-mail válido");
+//                valid = false;
+//            } else {
+//                _emailText.setError(null);
+//            }
+//
+//            if (password.isEmpty() || password.length() < senhaMinCaracteres || password.length() > senhaMaxCaracteres) {
+//                _passwordText.setError("Entre " + senhaMinCaracteres + " e " + senhaMaxCaracteres + " caracteres");
+//                valid = false;
+//            } else {
+//                _passwordText.setError(null);
+//            }
 
             return valid;
         }

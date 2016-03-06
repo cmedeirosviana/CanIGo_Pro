@@ -14,13 +14,16 @@ public class DBAdapter {
 
     private static Context context;
 
+    public DBAdapter() {
+    }
+
     public static Context getContext() {
         return context;
     }
 
     private static DBAdapter sInstance;
-    private DatabaseHelper DBHelper;
-    private SQLiteDatabase db;
+    protected static DatabaseHelper DBHelper;
+    protected static SQLiteDatabase db;
 
 
 
@@ -29,6 +32,7 @@ public class DBAdapter {
         this.context = pContext;
         this.DBHelper = new DatabaseHelper(this.context);
     }
+
 
     public static synchronized DBAdapter getinstance(Context pContext)
     {
@@ -39,7 +43,7 @@ public class DBAdapter {
         return sInstance;
     }
 
-    private static class DatabaseHelper extends SQLiteOpenHelper
+    protected static class DatabaseHelper extends SQLiteOpenHelper
     {
         DatabaseHelper(Context context)
         {
@@ -49,14 +53,14 @@ public class DBAdapter {
         @Override
         public void onCreate(SQLiteDatabase db)
         {
-            db.execSQL(Script_User.FeedEntry.TABLE_NAME);
-            db.execSQL(Script_Style.FeedEntry.TABLE_NAME);
-            db.execSQL(Script_Pin.FeedEntry.TABLE_NAME);
-            db.execSQL(Script_Photo.FeedEntry.TABLE_NAME);
-            db.execSQL(Script_Panel.FeedEntry.TABLE_NAME);
-            db.execSQL(Script_Info.FeedEntry.TABLE_NAME);
-            db.execSQL(Script_CommentVote.FeedEntry.TABLE_NAME);
-            db.execSQL(Script_Battle.FeedEntry.TABLE_NAME);
+            db.execSQL(Script_User.SQL_CREATE_ENTRIES);
+//            db.execSQL(Script_Style.FeedEntry.TABLE_NAME);
+//            db.execSQL(Script_Pin.FeedEntry.TABLE_NAME);
+//            db.execSQL(Script_Photo.FeedEntry.TABLE_NAME);
+//            db.execSQL(Script_Panel.FeedEntry.TABLE_NAME);
+//            db.execSQL(Script_Info.FeedEntry.TABLE_NAME);
+//            db.execSQL(Script_CommentVote.FeedEntry.TABLE_NAME);
+//            db.execSQL(Script_Battle.FeedEntry.TABLE_NAME);
         }
 
         @Override
@@ -67,14 +71,14 @@ public class DBAdapter {
         }
     }
 
-    public DBAdapter open() throws SQLException
+    public static void open() throws SQLException
     {
-        this.db = this.DBHelper.getWritableDatabase();
-        return this;
+        db = DBHelper.getWritableDatabase();
+//        return this.db;
     }
 
-    public void close()
+    public static void close()
     {
-        this.DBHelper.close();
+        DBHelper.close();
     }
 }

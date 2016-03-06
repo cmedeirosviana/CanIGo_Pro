@@ -12,7 +12,7 @@ import paprica_company.canigo_pro.Dao.DBAdapter;
 import paprica_company.canigo_pro.Dao.Script_User;
 
 
-public class User
+public class User extends DBAdapter
 {
     //-------------------------------- Atributes:--------------------------------------------------
     String login;
@@ -31,78 +31,57 @@ public class User
         return email;
     }
 
-    //-------------------------------- DB Stuff: --------------------------------------------------
-
-    private DatabaseHelper mDbHelper;
-    private SQLiteDatabase mDb;
-
-    private final Context mCtx;
-
-    private static class DatabaseHelper extends SQLiteOpenHelper {
-
-        DatabaseHelper(Context context) {
-            super(context, DBAdapter.DATABASE_NAME, null, DBAdapter.DATABASE_VERSION);
-        }
-
-        @Override
-        public void onCreate(SQLiteDatabase db) {
-        }
-
-        @Override
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        }
-    }
     //-------------------------------------- Builders----------------------------------------------
     public User(String name, String email, String year) {
 
-        this.mCtx = DBAdapter.getContext();
         open();
         createUser(name, email, year);
         close();
     }
+    private User(Cursor mCursor) {
+        this.login = mCursor.getString(1);
+        this.psw = mCursor.getString(2);
+        this.email = mCursor.getString(3);
+    }
     //---------------------------------- Table DB Methods------------------------------------------
-    public User open() throws SQLException {
-        this.mDbHelper = new DatabaseHelper(this.mCtx);
-        this.mDb = this.mDbHelper.getWritableDatabase();
-        return this;
-    }
-
-    public void close() {
-        this.mDbHelper.close();
-    }
 
     private long createUser(String name, String email, String year){
         ContentValues initialValues = new ContentValues();
         initialValues.put(Script_User.FeedEntry.COLUMN_LOGIN, name);
         initialValues.put(Script_User.FeedEntry.COLUMN_EMAIL, email);
         initialValues.put(Script_User.FeedEntry.COLUMN_PWD, year);
-        return this.mDb.insert(Script_User.FeedEntry.TABLE_NAME, null, initialValues);
+        return db.insert(Script_User.FeedEntry.TABLE_NAME, null, initialValues);
     }
 
 
     public boolean deleteUser(long rowId) {
 
-        return this.mDb.delete(Script_User.FeedEntry.TABLE_NAME, Script_User.FeedEntry._ID + "=" + rowId, null) > 0; //$NON-NLS-1$
+        return db.delete(Script_User.FeedEntry.TABLE_NAME, Script_User.FeedEntry._ID + "=" + rowId, null) > 0; //$NON-NLS-1$
     }
 
 
-    public Cursor getAllUsers() {
-
-        return this.mDb.query(Script_User.FeedEntry.TABLE_NAME, new String[] { Script_User.FeedEntry._ID,
-                Script_User.FeedEntry.COLUMN_LOGIN, Script_User.FeedEntry.COLUMN_EMAIL, Script_User.FeedEntry.COLUMN_PWD }, null, null, null, null, null);
-    }
-
-
-    public Cursor getUser(long rowId) throws SQLException {
-
-        Cursor mCursor =
-
-                this.mDb.query(true, Script_User.FeedEntry.TABLE_NAME, new String[] { Script_User.FeedEntry._ID,
-                        Script_User.FeedEntry.COLUMN_EMAIL, Script_User.FeedEntry.COLUMN_LOGIN, Script_User.FeedEntry.COLUMN_PWD}, Script_User.FeedEntry._ID + "=" + rowId, null, null, null, null, null);
+    public static void getAllUsers() {
+        open();
+        Cursor mCursor = db.query(Script_User.FeedEntry.TABLE_NAME, Script_User.COLUMNS, null, null, null, null, null);
         if (mCursor != null) {
             mCursor.moveToFirst();
+            User pUser = new User(mCursor);
         }
-        return mCursor;
+        close();
+    }
+
+
+    public static User getUser(String pEmail) throws SQLException {
+        open();
+        User pUser = null;
+        String[] args = { pEmail };
+        Cursor mCursor = db.query(Script_User.FeedEntry.TABLE_NAME, Script_User.COLUMNS, Script_User.FeedEntry.COLUMN_EMAIL+"=?", args, null,null,null);
+        if (mCursor != null) {
+            mCursor.moveToFirst();
+            pUser = new User(mCursor);
+        }
+        close();
+        return pUser;
     }
 
     public boolean updateUser(long rowId, String name, String model,
@@ -112,7 +91,7 @@ public class User
         args.put(Script_User.FeedEntry.COLUMN_EMAIL, model);
         args.put(Script_User.FeedEntry.COLUMN_PWD, year);
 
-        return this.mDb.update(Script_User.FeedEntry.TABLE_NAME, args, Script_User.FeedEntry._ID + "=" + rowId, null) >0;
+        return this.db.update(Script_User.FeedEntry.TABLE_NAME, args, Script_User.FeedEntry._ID + "=" + rowId, null) >0;
     }
     //------------------------------------ Class Methods-------------------------------------------
 }
