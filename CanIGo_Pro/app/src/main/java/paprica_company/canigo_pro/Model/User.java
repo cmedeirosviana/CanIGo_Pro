@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import paprica_company.canigo_pro.Dao.DBAdapter;
 import paprica_company.canigo_pro.Dao.Script_User;
 
@@ -33,26 +32,27 @@ public class User extends DBAdapter
 
     //-------------------------------------- Builders----------------------------------------------
     public User(String name, String email, String year) {
-
         open();
         createUser(name, email, year);
         close();
     }
+
     private User(Cursor mCursor) {
         this.login = mCursor.getString(1);
         this.psw = mCursor.getString(2);
         this.email = mCursor.getString(3);
     }
+
     //---------------------------------- Table DB Methods------------------------------------------
 
-    private long createUser(String name, String email, String year){
+    private long createUser(String name, String email, String year)
+    {
         ContentValues initialValues = new ContentValues();
         initialValues.put(Script_User.FeedEntry.COLUMN_LOGIN, name);
         initialValues.put(Script_User.FeedEntry.COLUMN_EMAIL, email);
         initialValues.put(Script_User.FeedEntry.COLUMN_PWD, year);
         return db.insert(Script_User.FeedEntry.TABLE_NAME, null, initialValues);
     }
-
 
     public boolean deleteUser(long rowId) {
 

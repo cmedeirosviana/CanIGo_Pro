@@ -79,11 +79,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             }
         });
 
-        //-------------------------------------- ActionBar Implementation --------------------------------------------
-
-
-
-
     }
     //-------------------------------------- Menu Implementation --------------------------------------------
 
