@@ -18,6 +18,10 @@ public final class Script_User {
 
     private static final String COMMA_SEP = ",";
 
+    public static final String[] COLUMNS = new String[] { Script_User.FeedEntry._ID,
+            Script_User.FeedEntry.COLUMN_LOGIN, Script_User.FeedEntry.COLUMN_PWD, Script_User.FeedEntry.COLUMN_EMAIL };
+
+
     public static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + FeedEntry.TABLE_NAME + "(" +
                     FeedEntry._ID + " INTEGER PRIMARY KEY," +
