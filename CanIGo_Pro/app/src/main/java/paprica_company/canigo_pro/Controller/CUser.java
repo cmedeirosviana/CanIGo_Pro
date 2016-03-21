@@ -17,4 +17,27 @@ public class CUser {
             return true;
         return false;
     }
+
+    public boolean validate() {
+        boolean valid = true;
+
+//            String email = _emailText.getText().toString();
+//            String password = _passwordText.getText().toString();
+//
+//            if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+//                _emailText.setError("Insira um e-mail válido");
+//                valid = false;
+//            } else {
+//                _emailText.setError(null);
+//            }
+//
+//            if (password.isEmpty() || password.length() < senhaMinCaracteres || password.length() > senhaMaxCaracteres) {
+//                _passwordText.setError("Entre " + senhaMinCaracteres + " e " + senhaMaxCaracteres + " caracteres");
+//                valid = false;
+//            } else {
+//                _passwordText.setError(null);
+//            }
+
+        return valid;
+    }
 }
