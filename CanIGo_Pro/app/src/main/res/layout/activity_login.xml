@@ -64,7 +64,7 @@
             android:id="@+id/btn_facebook"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="0dp"
             android:layout_marginBottom="24dp"
             android:padding="12dp"
             android:drawableLeft="@drawable/facebook"
@@ -77,5 +77,13 @@
             android:text="Não tem conta? Cadastre-se aqui!"
             android:gravity="center"
             android:textSize="16dip"/>
+
+    <TextView android:id="@+id/link_fgtPwd"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Esqueceu sua senha? Clique aqui!"
+        android:gravity="center"
+        android:textSize="16dip"/>
 
     </LinearLayout>
