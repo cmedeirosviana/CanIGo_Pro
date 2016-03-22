@@ -1,19 +1,28 @@
 package paprica_company.canigo_pro.View;
 
 import android.content.Intent;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import paprica_company.canigo_pro.R;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener,MenuItem.OnMenuItemClickListener
 {
+
+    private String[] mPlanetTitles;
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -79,6 +88,17 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             }
         });
 
+        //-------------------------------------- Navigation Implementation --------------------------------------------
+
+        mPlanetTitles = getResources().getStringArray(R.array.nome);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+        // Set the adapter for the list view
+        mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.navigation_list_item, mPlanetTitles));
+        // Set the list's click listener
+        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+
     }
     //-------------------------------------- Menu Implementation --------------------------------------------
 
@@ -108,4 +128,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 return false;
         }
     }
+
+
 }
