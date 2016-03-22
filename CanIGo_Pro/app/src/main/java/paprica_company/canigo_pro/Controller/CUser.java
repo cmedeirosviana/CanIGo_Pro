@@ -18,7 +18,7 @@ public class CUser {
         return false;
     }
 
-    public boolean validate() {
+    public static boolean validate() {
         boolean valid = true;
 
 //            String email = _emailText.getText().toString();

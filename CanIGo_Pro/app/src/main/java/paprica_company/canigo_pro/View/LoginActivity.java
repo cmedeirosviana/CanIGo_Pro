@@ -23,14 +23,12 @@ public class LoginActivity extends AppCompatActivity
 {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
-    private DBAdapter database_sql;
-    private final int senhaMinCaracteres = 4;
-    private final int senhaMaxCaracteres = 10;
 
         @InjectView(R.id.input_email_login) EditText _emailText;
         @InjectView(R.id.input_password_login) EditText _passwordText;
         @InjectView(R.id.btn_login) Button _loginButton;
         @InjectView(R.id.link_signup) TextView _signupLink;
+        @InjectView(R.id.link_fgtPwd) TextView _fgtPwdLink;
 
         @Override
         public void onCreate(Bundle savedInstanceState)
@@ -39,7 +37,7 @@ public class LoginActivity extends AppCompatActivity
             setContentView(R.layout.activity_login);
             ButterKnife.inject(this);
             DBAdapter.getinstance(this.getApplicationContext());
-            CUser.createUser("luana", "lu@yahoo.com.br", "1989");
+
             _loginButton.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -53,28 +51,25 @@ public class LoginActivity extends AppCompatActivity
                 @Override
                 public void onClick(View v) {
                     // Start the Signup activity
-                   // Intent intent = new Intent(getApplicationContext(), SignActivity.class);
-                   // startActivityForResult(intent, REQUEST_SIGNUP);
+                    Intent intent = new Intent(getApplicationContext(), SignActivity.class);
+                    startActivityForResult(intent, REQUEST_SIGNUP);
                 }
             });
-        try
-        {
-            database_sql=DBAdapter.getinstance(this.getApplicationContext());
-            
-        }
-        catch (SQLException exception)
-        {
-            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
-            dlg.setMessage("Connection not Performed!"+exception.getMessage());
-            dlg.setNegativeButton("OK", null);
-            dlg.show();
-        }
-        }
+
+            _fgtPwdLink.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Start the Signup activity
+                    // Intent intent = new Intent(getApplicationContext(), SignActivity.class);
+                    // startActivityForResult(intent, REQUEST_SIGNUP);
+                }
+            });
+        };
 
         public void login() {
             Log.d(TAG, "Login");
 
-            if (!validate()) {
+            if (!CUser.validate()) {
                 onLoginFailed();
                 return;
             }
@@ -88,9 +83,6 @@ public class LoginActivity extends AppCompatActivity
 
             String email = _emailText.getText().toString();
             String password = _passwordText.getText().toString();
-            CUser.checkUser(email,password);
-
-            // TODO: Banco de dados.
 
             new android.os.Handler().postDelayed(
                     new Runnable() {
@@ -109,8 +101,6 @@ public class LoginActivity extends AppCompatActivity
             if (requestCode == REQUEST_SIGNUP) {
                 if (resultCode == RESULT_OK) {
 
-                    // TODO: Implement successful signup logic here
-                    // By default we just finish the Activity and log them in automatically
                     this.finish();
                 }
             }
@@ -124,7 +114,8 @@ public class LoginActivity extends AppCompatActivity
 
         public void onLoginSuccess() {
             _loginButton.setEnabled(true);
-
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
         }
 
         public void onLoginFailed() {
@@ -133,27 +124,5 @@ public class LoginActivity extends AppCompatActivity
             _loginButton.setEnabled(true);
         }
 
-        public boolean validate() {
-            boolean valid = true;
-
-//            String email = _emailText.getText().toString();
-//            String password = _passwordText.getText().toString();
-//
-//            if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-//                _emailText.setError("Insira um e-mail válido");
-//                valid = false;
-//            } else {
-//                _emailText.setError(null);
-//            }
-//
-//            if (password.isEmpty() || password.length() < senhaMinCaracteres || password.length() > senhaMaxCaracteres) {
-//                _passwordText.setError("Entre " + senhaMinCaracteres + " e " + senhaMaxCaracteres + " caracteres");
-//                valid = false;
-//            } else {
-//                _passwordText.setError(null);
-//            }
-
-            return valid;
-        }
 }
 
