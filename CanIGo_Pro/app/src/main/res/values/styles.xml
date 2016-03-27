@@ -12,7 +12,6 @@
     <color name="whitegrey">#FFF2F2F2</color>
 
     <style name="Theme.AppCompat.Light.NoActionBar" parent="@style/Theme.AppCompat.Light">
-        <!-- Customize your theme here. -->
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
@@ -25,6 +24,7 @@
         <item name="android:paddingTop">5dp</item>
         <item name="android:paddingBottom">5dp</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/pin_background_dialog</item>
     </style>
 
     <style name="TextAppearence.TextInputLayout.Purple" parent="@android:style/TextAppearance">
@@ -38,4 +38,15 @@
         <item name="colorControlHighlight">@color/colorPurple</item>
         <item name="android:textColorHint">@color/colorPurple</item>
     </style>
+
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/whiteColor</item>
+        <item name="android:background">@color/colorPurple</item>
+        <item name="actionBarSize">30dip</item>
+    </style>
+
+    <style name="ThemeWithCorners" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@drawable/pin_background_dialog</item>
+    </style>
+
 </resources>

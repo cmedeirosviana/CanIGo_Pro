@@ -1,34 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
+        <item
+            android:id="@+id/nav_fotos"
+            android:icon="@drawable/canigo"
+            android:title="@string/fotos" />
+        <item
+            android:id="@+id/nav_pins"
+            android:icon="@drawable/canigo"
+            android:title="@string/Pins" />
+        <item
+            android:id="@+id/nav_results"
+            android:icon="@drawable/canigo"
+            android:title="@string/Resultados" />
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
+    <item
+            android:id="@+id/nav_interests"
             android:icon="@drawable/canigo"
-            android:title="@string/nome" />
-        <item
-            android:id="@+id/nav_about"
-            android:icon="@drawable/canigo"
-            android:title="@string/nome" />
-        <item
-            android:id="@+id/nav_settings"
-            android:icon="@drawable/canigo"
-            android:title="@string/nome" />
-
-        <item
-            android:id="@+id/navigation_subheader"
-            android:title="@string/nome">
-            <menu>
-                <item
-                    android:id="@+id/navigation_sub_item_1"
-                    android:icon="@drawable/canigo"
-                    android:title="@string/nome" />
-                <item
-                    android:id="@+id/navigation_sub_item_2"
-                    android:icon="@drawable/canigo"
-                    android:title="@string/nome" />
-            </menu>
-        </item>
-    </group>
+            android:title="@string/Interesses" />
 </menu>

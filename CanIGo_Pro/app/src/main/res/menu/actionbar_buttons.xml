@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <item
+        android:id="@+id/action_versus"
+        android:icon="@drawable/versus"
+        android:title="@string/Actions"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_pin"
+        android:title="@string/Actions"
+        android:icon="@drawable/pin"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_photo"
+        android:icon="@drawable/perfil"
+        android:title="@string/Actions"
+        app:showAsAction="ifRoom"/>
+</menu>

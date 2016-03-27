@@ -1,6 +1,10 @@
 <resources>
-<string name="app_name">CanIGo_Pro</string>
-<string name="conteudo_improprio">Conteúdo Impróprio</string>
-<string name="spam">Spam</string>
-<string name="nome">Nome do Campo</string>
+    <string name="app_name">CanIGo_Pro</string>
+    <string name="conteudo_improprio">Conteúdo Impróprio</string>
+    <string name="spam">Spam</string>
+    <string name="fotos">Minhas Fotos</string>
+    <string name="Pins">Pins</string>
+    <string name="Resultados">Resultados</string>
+    <string name="Interesses">Estilos de Interesses</string>
+    <string name="Actions">Actions</string>
 </resources>

@@ -5,4 +5,7 @@
     <dimen name="image_horizontal_margin">0dp</dimen>
     <dimen name="image_vertical_margin">0dp</dimen>
     <dimen name="main_image_buttons">50dp</dimen>
+    <dimen name="margin_name_navigation">30dp</dimen>
+    <dimen name="height_perfil_navigation">192dp</dimen>
+    <dimen name="height_actionbar">30dp</dimen>
 </resources>

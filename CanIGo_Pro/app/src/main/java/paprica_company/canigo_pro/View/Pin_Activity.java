@@ -40,7 +40,6 @@ public class Pin_Activity extends Activity
         setContentView(R.layout.layout_list_pin);
 
         DBAdapter.getinstance(this.getApplicationContext());
-
         List<String> list_test = new ArrayList<String>();
 
         //--------------------------------------ImageView convertion in data Type Byte--------------------------------------------------------------------
