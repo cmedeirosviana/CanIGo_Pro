@@ -13,6 +13,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import paprica_company.canigo_pro.Controller.CUser;
@@ -23,21 +30,44 @@ public class LoginActivity extends AppCompatActivity
 {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
-
+    private CallbackManager callbackManager;
+    private LoginButton loginButton;
         @InjectView(R.id.input_email_login) EditText _emailText;
         @InjectView(R.id.input_password_login) EditText _passwordText;
         @InjectView(R.id.btn_login) Button _loginButton;
         @InjectView(R.id.link_signup) TextView _signupLink;
         @InjectView(R.id.link_fgtPwd) TextView _fgtPwdLink;
+        @InjectView(R.id.btn_facebook) LoginButton _facebookLoginButton;
+
 
         @Override
         public void onCreate(Bundle savedInstanceState)
         {
             super.onCreate(savedInstanceState);
+            FacebookSdk.sdkInitialize(getApplicationContext());
+            callbackManager = CallbackManager.Factory.create();
             setContentView(R.layout.activity_login);
+
             ButterKnife.inject(this);
             DBAdapter.getinstance(this.getApplicationContext());
 
+            _facebookLoginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+                @Override
+                public void onSuccess(LoginResult loginResult) {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }
+
+                @Override
+                public void onCancel() {
+
+                }
+
+                @Override
+                public void onError(FacebookException e) {
+
+                }
+            });
             _loginButton.setOnClickListener(new View.OnClickListener() {
 
                 @Override
