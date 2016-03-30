@@ -12,8 +12,7 @@ public class Interests_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interests);
-
-        ToggleButton toggleButton = (ToggleButton) findViewById(R.id.toggle_interest);
+        
 
     }
 }

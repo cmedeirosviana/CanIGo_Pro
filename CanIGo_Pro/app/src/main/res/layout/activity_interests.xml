@@ -8,14 +8,128 @@
     tools:context="paprica_company.canigo_pro.View.Interests_Activity">
 
     <ToggleButton
-        android:id="@+id/toggle_interest"
+        android:id="@+id/toggle_interest1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/check_interest"
+        android:src="@drawable/foto_naoselecionada"
+        android:textOn=""
+        android:textOff=""
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ToggleButton
+        android:id="@+id/toggle_interest2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/check_interest"
+        android:src="@drawable/foto_naoselecionada"
+        android:textOn=""
+        android:textOff=""
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_alignTop="@+id/toggle_interest3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ToggleButton
+        android:id="@+id/toggle_interest3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/check_interest"
+        android:src="@drawable/foto_naoselecionada"
+        android:textOn=""
+        android:textOff=""
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_alignTop="@+id/toggle_interest1"
+        android:layout_alignLeft="@+id/toggle_interest5"
+        android:layout_alignStart="@+id/toggle_interest5" />
+
+    <ToggleButton
+        android:id="@+id/toggle_interest4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/check_interest"
+        android:src="@drawable/foto_naoselecionada"
+        android:textOn=""
+        android:textOff=""
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ToggleButton
+        android:id="@+id/toggle_interest5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/check_interest"
+        android:src="@drawable/foto_naoselecionada"
+        android:textOn=""
+        android:textOff=""
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ToggleButton
+        android:id="@+id/toggle_interest6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/foto_naoselecionada"
         android:background="@drawable/check_interest"
         android:textOn=""
         android:textOff=""
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:layout_centerVertical="true"/>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ToggleButton
+        android:id="@+id/toggle_interest7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/foto_naoselecionada"
+        android:background="@drawable/check_interest"
+        android:textOn=""
+        android:textOff=""
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ToggleButton
+        android:id="@+id/toggle_interest8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/foto_naoselecionada"
+        android:background="@drawable/check_interest"
+        android:textOn=""
+        android:textOff=""
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_alignTop="@+id/toggle_interest9"
+        android:layout_alignLeft="@+id/toggle_interest3"
+        android:layout_alignStart="@+id/toggle_interest3" />
+
+    <ToggleButton
+        android:id="@+id/toggle_interest9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/foto_naoselecionada"
+        android:background="@drawable/check_interest"
+        android:textOn=""
+        android:textOff=""
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
