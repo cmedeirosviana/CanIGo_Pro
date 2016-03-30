@@ -1,13 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:layout_height="430dp" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:background="@drawable/pin_background_dialog"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/image_vertical_margin"
     android:paddingBottom="@dimen/image_vertical_margin">
 
+    <RelativeLayout
+        android:id="@+id/Pin_header"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/imageView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ESCOLHA A PASTA"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="15sp"
+                android:id="@+id/textView"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/addpanel"
+                android:id="@+id/imageButton" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:id="@+id/button"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/picturepin"
+            android:id="@+id/imageView"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
     <ListView
+        android:layout_below="@id/Pin_header"
+        android:layout_above="@id/header_test"
         android:id="@+id/pinList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">

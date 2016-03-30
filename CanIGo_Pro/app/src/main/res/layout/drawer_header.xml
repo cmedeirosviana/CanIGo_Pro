@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header_test"
     android:layout_width="match_parent"
     android:layout_height="@dimen/height_perfil_navigation"
     android:paddingBottom="@dimen/margin_name_navigation"
@@ -18,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Caio de Medeiros Viana"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="13sp"
         android:id="@+id/nav_perfil_name"
         android:layout_alignParentBottom="true"

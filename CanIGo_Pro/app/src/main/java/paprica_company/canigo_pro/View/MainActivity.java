@@ -139,7 +139,11 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 break;
 
             case R.id.nav_interests:
+
+                Intent intent =new Intent(MainActivity.this,Interests_Activity.class);
+                startActivity(intent);
                 mDrawerLayout.closeDrawer(GravityCompat.START);
+
                 break;
         }
 

@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/teste">
+    android:id="@+id/pin_layout">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -11,17 +11,15 @@
         android:id="@+id/panelImg"
         android:src="@drawable/canigo"
         android:layout_centerInParent="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentLeft="true"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Painel_1"
+        android:text="Roupa Festa da Pat"
         android:id="@+id/panelTxt"
-        android:layout_alignBottom="@+id/panelImg"
         android:layout_centerInParent="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:paddingLeft="15dp"
+        android:layout_toRightOf="@+id/panelImg"/>
 
 </RelativeLayout>

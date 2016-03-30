@@ -74,6 +74,12 @@ public class Pin_Activity extends Activity
         list_test.add("B");
         list_test.add("C");
         list_test.add("B");
+        list_test.add("B");
+        list_test.add("C");
+        list_test.add("B");
+        list_test.add("B");
+        list_test.add("C");
+        list_test.add("B");
 
         ListView pinList = (ListView)findViewById(R.id.pinList);
 

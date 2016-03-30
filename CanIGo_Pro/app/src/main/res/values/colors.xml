@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorPurple">#7b1fa2</color>
     <color name="whiteColor">#FFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="whitegrey">#FFF2F2F2</color>
+    <color name="white">#FFFFFF</color>
 </resources>
