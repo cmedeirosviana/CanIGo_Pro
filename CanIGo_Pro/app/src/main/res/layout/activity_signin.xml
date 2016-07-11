@@ -1,6 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:paddingTop="190dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:background="@drawable/background_login">
+
+    <!-- Nome Label -->
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:theme="@style/Theme.App.Base"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+
+    <EditText android:id="@+id/input_nome_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Nome" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!--sex label -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPurple"
+        android:textSize="18sp"
+        android:paddingLeft="5dp"
+        android:text="@string/sex_label"
+        android:id="@+id/sex_text_label" />
+
+        <RadioGroup
+            android:layout_width="230dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:id="@+id/relative_options_sex">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sex_label_option_female"
+                android:textColor="@color/colorPurple"
+                android:textSize="14sp"
+                android:id="@+id/radio_female" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sex_label_option_male"
+                android:textColor="@color/colorPurple"
+                android:textSize="14sp"
+                android:id="@+id/radio_male"/>
+
+        </RadioGroup>
+    <!-- Email Label -->
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:theme="@style/Theme.App.Base"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+
+        <EditText android:id="@+id/input_email_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Email" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!-- Password Label -->
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:theme="@style/Theme.App.Base"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+        <EditText android:id="@+id/input_password_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Senha"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <!-- Password confirmation Label -->
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:theme="@style/Theme.App.Base"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat">
+        <EditText android:id="@+id/input_confirmation_password_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Confirmação da Senha"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_signin"
+        android:id="@+id/signin_button"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
